@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "Produtos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome_produto": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "unique": true
+    },
+    "imagem_produto": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "tempo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "serve": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "preco": {
+      "type": "decimal"
+    }
+  }
+}
